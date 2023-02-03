@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dash</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .brand-gradient {
+            background: #384dc7;
+            background-image: -webkit-linear-gradient(270deg, #384dc7 0%, #673ab7 70%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .vr {
+           color: rgb(255, 255, 255); 
+        }
+        .nav-text {
+            font-size: 22px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+    <!-- Nav -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow small mb-3">
+        <div class="container-fluid">
+            <a href="dash.html" class="navbar-brand">
+                <span class="brand-gradient">EMS 2.1</span>
+            </a>
+            <button class="navbar-toggler border-0" 
+                    type="button" 
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar-supported-content" 
+                    aria-controls="navbar-supported-content"
+                    aria-expanded="false" 
+                    aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-supported-content">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item nav-text">
+                        <a class="nav-link active" aria-current="page" href="dash.html">Home</a>
+                    </li>
+                    <li class="nav-item nav-text">
+                        <a class="nav-link" href="employees-list.html">Employees</a>
+                    </li>
+                    <li class="nav-item nav-text">
+                        <a class="nav-link" href="jobs-list.html">Jobs</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <div class="hstack gap-3 me-3">
+                        <input class="form-control form-control-sm me-auto" type="search" placeholder="Search for..." aria-label="Search for...">
+                        <button type="submit" class="btn btn-sm btn-success">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                              </svg>
+                        </button>
+                    </div>
+                    <div class="vr"></div>
+                    <a href="login.html" class="btn btn-sm btn-warning ms-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                          </svg>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Nav -->
+
+    <!-- Employee data -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <div class="list-group shadow-sm small mb-3">
+                    <div class="list-group-item active">Employees Data</div>
+                    <a 
+                    href="#" 
+                    class="list-group-item list-group-item-action"
+                    data-bs-toggle="modal"
+                    data-bs-target="#add_employee">
+                    Add Employee</a>
+                    <a href="employees-list.html" class="list-group-item list-group-item-action">View Employees</a>
+                </div>
+                <div class="list-group shadow-sm small mb-3">
+                    <div class="list-group-item active">Related Links</div>
+                    <a href="jobs-list.html" class="list-group-item list-group-item-action">Jobs List</a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="card shadow-sm border-0 mb-3">
+                    <div class="card-header text-bg-dark text-center">Employees List</div>
+                    <table class="table table-sm small table-bordered align-middle mb-0">
+                        <tr class="table-secondary">
+                            <th>ID</th>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Email ID</th>
+                            <th>Details</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>19</td>
+                            <td>Gary Graphic</td>
+                            <td>garygraphic@email.com</td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_detail">
+                                    Details</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-warning"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_edit">
+                                    Edit</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_delete">
+                                    Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>33</td>
+                            <td>Wilson Webber</td>
+                            <td>wilsonwebber@email.com</td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_detail">
+                                    Details</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-warning"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_edit">
+                                    Edit</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_delete">
+                                    Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>49</td>
+                            <td>Dave Developer</td>
+                            <td>davedeveloper@email.com</td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_detail">
+                                    Details</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-warning"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_edit">
+                                    Edit</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_delete">
+                                    Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>124</td>
+                            <td>Mark Marketer</td>
+                            <td>markmarketer@email.com</td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_detail">
+                                    Details</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-warning"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_edit">
+                                    Edit</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-grid">
+                                    <a 
+                                    href="#"
+                                    class="btn btn-sm btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#employee_delete">
+                                    Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Employee data -->
+
+    <!-- Add Employee Modal -->
+    <div 
+        class="modal fade"
+        id="add_employee"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-hidden="true"
+        style="backdrop-filter: blur(5px);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title">Add Employee Details</h5>
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                       <div class="container">
+                        <div class="row gx-3">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <input type="date" class="form-control form-control-sm" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-sm" placeholder="First Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control form-control-sm" placeholder="Email ID" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control form-control-sm" placeholder="Phone" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <select class="form-select form-select-sm" aria-label="Job Assigned">
+                                        <option selected>Select job for Employee</option>
+                                        <option value="Graphic Designer">Graphic Designer</option>
+                                        <option value="Web Designer">Web Designer</option>
+                                        <option value="Web Developer">Web Developer</option>
+                                        <option value="Digital Marketer">Digital Marketer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="d-grid">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-sm btn-success">
+                                        Add Employee
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="d-grid">
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-warning"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                       </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Employee Modal -->
+
+    <!-- Employee Details Modal -->
+    <div 
+        class="modal fade"
+        id="employee_detail"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-hidden="true"
+        style="backdrop-filter: blur(5px);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title">Employee Details</h5>
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tr>
+                            <th class="w-50">ID</th>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th>Employee ID</th>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <td>Place</td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td>Holder</td>
+                        </tr>
+                        <tr>
+                            <th>Email ID</th>
+                            <td>placeholder@email.com</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>7654321</td>
+                        </tr>
+                        <tr>
+                            <th>Joining Date</th>
+                            <td>15th January 2023</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <a 
+                        href="#" 
+                        class="btn btn-sm btn-warning"
+                        data-bs-toggle="modal"
+                        data-bs-target="#employee_edit">
+                        Edit Details
+                    </a>
+                    <a 
+                        href="#" 
+                        class="btn btn-sm btn-primary"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                        Close
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Employee Details Modal -->
+
+    <!-- Edit Employee Modal -->
+    <div 
+        class="modal fade"
+        id="employee_edit"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-hidden="true"
+        style="backdrop-filter: blur(5px);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title">Edit Employee Details</h5>
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                       <div class="container">
+                        <div class="row gx-3">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <input type="date" class="form-control form-control-sm" value="2022-07-25" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-sm" placeholder="First Name" value="John" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Last Name" value="Doe" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control form-control-sm" placeholder="Email ID" value="johndoe@email.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control form-control-sm" placeholder="Phone" value="7654321" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <select class="form-select form-select-sm" aria-label="Job Assigned">
+                                        <option>Select job for Employee</option>
+                                        <option selected value="Graphic Designer">Graphic Designer</option>
+                                        <option value="Web Designer">Web Designer</option>
+                                        <option value="Web Developer">Web Developer</option>
+                                        <option value="Digital Marketer">Digital Marketer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="d-grid">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-sm btn-success">
+                                        Update Employee
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="d-grid">
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-warning"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                       </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Employee Modal -->
+
+    <!-- Employee Delete Modal -->
+    <div 
+        class="modal fade"
+        id="employee_delete"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-hidden="true"
+        style="backdrop-filter: blur(5px);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center d-flex justify-content-between align-items-center">
+                    <h4 class="fw-light m-0">
+                        Do you want to delete <strong><q>John Doe</q></strong>?
+                    </h4>
+                    <button
+                        type="button"
+                        class="btn-close ms-auto"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button 
+                        type="submit" 
+                        class="btn btn-sm btn-success">
+                        Yes
+                    </button>
+                    <button 
+                        type="button" 
+                        class="btn btn-sm btn-warning"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                        No
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Employee Delete Modal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

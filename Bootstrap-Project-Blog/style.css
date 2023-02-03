@@ -1,0 +1,19 @@
+.brand-gradient{
+    background: #0091ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(270deg, #384dc7 0%, #673ab7 90%); /* Chrome 10-25, Safari 5.1-6 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.banner-holder, .main-page-header{
+    background-image: url(img/banner.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+.custom-nav{
+    backdrop-filter: blur(8px);
+}
+.card-img-top{
+    height: 200px;
+    object-fit: cover;
+}
